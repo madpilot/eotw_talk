@@ -11,11 +11,18 @@
     <?php } ?>
     <script type="text/javascript" src="/javascripts/tiny_mce/tiny_mce.js"></script>
     <script type="text/javascript" src="/javascripts/application.js"></script>
+    <link href="/stylesheets/default.css" media="all" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <?php if($flash = flash()) { ?>
-      <div class="message"><?php echo $flash; ?></div>
-    <?php } ?>
-    <?php echo $content; ?>
+    <div id="header">
+      <h1>Junior &mdash; The world&rsquo;s smallest PHP framework</h1>
+    </div>
+
+    <div id="content">
+      <?php if($flash = flash()) { ?>
+        <div class="message"><?php echo $flash; ?></div>
+      <?php } ?>
+      <?php echo $content; ?>
+    </div>
   </body>
 </html>
