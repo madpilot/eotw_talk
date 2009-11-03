@@ -9,6 +9,8 @@
     <?php if(isset($vars['description'])) { ?>
       <meta name="Description" content="<?php echo $vars['description']; ?>" />
     <?php } ?>
+    <script type="text/javascript" src="/javascripts/jquery.js"></script>
+    <script type="text/javascript" src="/javascripts/jquery.uploadProgress.js"></script>
     <script type="text/javascript" src="/javascripts/tiny_mce/tiny_mce.js"></script>
     <script type="text/javascript" src="/javascripts/application.js"></script>
     <link href="/stylesheets/default.css" media="all" rel="stylesheet" type="text/css" />

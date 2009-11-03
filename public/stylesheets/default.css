@@ -101,3 +101,20 @@ label input {
   width: 80em;
   margin: 2em auto 0 auto;
 }
+
+.bar {
+  width: 300px;
+  clear: both;
+}
+
+#progress {
+  background: #eee;
+  border: 1px solid #222;
+  margin-top: 20px;
+}
+#progressbar {
+  width: 0px;
+  height: 24px;
+  background: #333;
+}
+

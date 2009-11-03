@@ -21,3 +21,22 @@ tinyMCE.init({
   spellchecker_languages: "+English=en",
   spellchecker_rpc_url: "/pages/spellcheck"
 });
+
+$(document).ready(function($) {
+  $(function() {
+      $('form').uploadProgress({
+        /* scripts locations for safari */
+        jqueryPath: "/javascripts/jquery.js",
+        uploadProgressPath: "/javascripts/jquery.uploadProgress.js",
+        /* function called each time bar is updated */
+        uploading: function(upload) {$('#percents').html(upload.percents+'%');},
+        /* selector or element that will be updated */
+        progressBar: "#progressbar",
+        /* progress reports url */
+        progressUrl: "/upload/progress",
+        /* how often will bar be updated */
+        interval: 1000
+      });
+  });
+});
+

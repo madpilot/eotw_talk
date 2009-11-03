@@ -206,6 +206,14 @@
         include('views/edit_page.php');
       }
     }
+    elseif(preg_match("/^upload$/", $request))
+    {
+      if($_SERVER['REQUEST_METHOD'] == "POST")
+      {
+        // Usually, you'd do something here with the file
+      }
+      include('views/upload.php');
+    }
     elseif(preg_match("/^(.+)$/", $request, $m))
     {
       $results = mysql_query("SELECT * FROM pages WHERE permalink = '" . $m[1] . "'");
