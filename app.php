@@ -219,8 +219,19 @@
       $results = mysql_query("SELECT * FROM pages WHERE permalink = '" . $m[1] . "'");
       if(mysql_num_rows($results) == 0)
       {
-        not_found();
-        return;
+        $results = mysql_query("SELECT * FROM redirects WHERE `from` = '" . $request . "'");
+        if(mysql_num_rows($results) != 0)
+        {
+          $redirect = mysql_fetch_assoc($results);
+          header('HTTP/1.0 301 Moved Permanently');
+          header("Location: /" . $redirect['to']);
+          return;
+        }
+        else
+        {
+          not_found();
+          return;
+        }
       }
       $page = mysql_fetch_assoc($results);
       $vars['page'] = $page;
